@@ -6,14 +6,15 @@ import {
   Link
 } from "react-router-dom";
 import '../src/configureAmplify'
+import Home from "./Pages/Home";
 function App() {
   return (
     <div className="">
-      <h1 className='text-red-500 text-center'>hello saymon welcome tailwind css</h1>
+      <h1 className='text-red-500 text-center text-5xl'>hello saymon welcome tailwind css</h1>
       <Router>
         <Switch>
-          <Route>
-
+          <Route exact patch="/"> 
+             <Home />
           </Route>
         </Switch>
       </Router>
