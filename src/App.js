@@ -4,6 +4,7 @@ import '../src/configureAmplify'
 import Navbar from "./Components/Navbar";
 import CreatePost from "./Pages/CreatePost";
 import Home from "./Pages/Home";
+import MyPosts from "./Pages/MyPosts";
 import Profile from "./Pages/Profile";
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/CreatePost" element={<CreatePost/>} />
+          <Route path="/createPost" element={<CreatePost/>} />
           <Route path="/Profile" element={<Profile/>} />
+          <Route path="/myPosts" element={<MyPosts/>} />
         </Routes>
     </div>
   );

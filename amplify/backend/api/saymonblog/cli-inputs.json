@@ -6,7 +6,16 @@
     "gqlSchemaPath": "/home/ddl/Desktop/web-development/Practice_project/saymon-blog/amplify/backend/api/saymonblog/schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "expirationTime": 7
-    }
+      "expirationTime": 65,
+      "apiKeyExpirationDate": "2022-06-25T20:51:19.167Z",
+      "keyDescription": "public api key"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": [
+      {
+        "mode": "AMAZON_COGNITO_USER_POOLS",
+        "cognitoUserPoolId": "authsaymonblog781f63df"
+      }
+    ]
   }
 }
