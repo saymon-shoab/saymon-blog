@@ -5,7 +5,7 @@ import {v4 as uuid} from 'uuid'
 import { createPost } from '../../src/graphql/mutations'
 import { useNavigate } from 'react-router-dom'
 import SimpleMDE from "react-simplemde-editor"
-// import "easymade/dist/easymade.min.css"
+import "easymde/dist/easymde.min.css";
 
 const initialState = {title: "", content: ""}
 function CreatePost () {
@@ -27,11 +27,30 @@ function CreatePost () {
       variables: {input: post},
       authMode: "AMAZON_COGNITO_USER_POOLS"
     })
-    navigate.push(`/post/${id}`)
+    navigate(`/post/${id}`)
   }
   return (
     <div className=' px-10 bg-slate-100 h-screen'>
         <h1 className="text-3xl font-semibold tracking-wide mt-6">Create Vlog</h1>
+        <input 
+          className=" border-b pb-2 text-lg my-4 focus:outline-none w-full font-light text-gray-500"
+          placeholder="Title"
+          name="title"
+          value={post.title}
+          onChange={onChange}
+        />
+        <SimpleMDE
+          className=" w-auto"
+          value={post.content}
+          onChange={(value)=> setPost({...post, content: value})}
+        />
+        <button
+         type="button"
+         onClick={createNewPost}
+         className=" mb-4 bg-blue-600 text-white font-semibold px-8 py-2 rounded-lg"
+        >
+          Post
+        </button>
     </div>
   )
 }
